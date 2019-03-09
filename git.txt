@@ -1,0 +1,115 @@
+网页教程：https://www.cnblogs.com/qijunjun/p/7137207.html
+
+1.git安装：https://git-scm.com/download/win
+	根据自己电脑来选择是32或者是64位的。
+
+2.下载完之后，点击安装。
+
+3.Git初始化及仓库创建和操作
+
+      1>、Git安装之后需要进行一些基本信息设置
+
+　　	a、设置用户名：git  config -- global  user.name  '你再github上注册的用户名';
+
+　　        b、设置用户邮箱：git  config -- global  user.email  '注册时候的邮箱';
+
+              注意：该配置会在github主页上显示谁提交了该文件
+
+ 　　       c、配置ok之后，我们用如下命令来看看是否配置成功
+
+　　        git config --list
+
+               注意：git  config --global 参数，有了这个参数表示你这台机器上所有的git仓库都会使用这个配置，当然你也可以对某个仓库指定不同的用户名和邮箱
+
+      2>、初始化一个新的git仓库
+
+　　        a、创建文件夹
+
+　　　　方法一：可以鼠标右击-》点击新建文件夹test1
+
+　　　　方法二：使用git新建：$  mkdir test1
+
+	b、在文件内初始化git（创建git仓库）
+
+　　　　方法一：直接输入 $ cd test1
+
+　　　　方法一：点击test1文件下进去之后-》鼠标右击选择Git Bash Here->输入$ git init
+
+      3>、向仓库中添加文件　　
+
+　　       方法一：用打开编辑器新建index.html文件
+  
+　　       方法二：使用git命令。$  touch '文件名'，然后把文件通过$ git add '文件名'添加到暂存区，最后提交操作
+
+       4>、修改仓库文件
+
+　　        方法一：用编辑器打开index.html进行修改
+
+　　        方法二：使用git命令。$  vi  '文件名'，然后在中间写内容，最后提交操作
+
+        5>、删除仓库文件
+
+　　         方法一：在编辑器中直接把要删除的文件删除掉
+
+　　         方法二：使用git删除：$ git rm '文件名'，然后提交操作
+
+4.Git管理远程仓库
+
+         1>、使用远程仓库的目的：备份、实现代码共享集中化管理
+
+                 Git远程仓库实际上就是保持在服务器上的git仓库文件
+
+5、Git克隆操作
+
+         目的：将远程仓库（github上对应的项目）复制到本地
+
+          1>、代码：git clone 仓库地址
+
+          2>、克隆项目
+
+          3>、将本地仓库同步到git远程仓库中：git push
+
+
+
+期间出现错误的情况有：　
+
+　a、出现提交错误
+
+　　解决：这是通过Git GUI进行提交时发生的错误，由 .git 文件夹中的文件被设为“只读”所致，将 .git 文件夹下的所有文件、文件夹及其子文件的只读属性去掉即可。
+
+　b、如果出现无法同步或没有权限，解决方法如下：
+
+　　用户名和密码一定要和github上的一致。
+
+
+本地文件上传到github：
+      1.在github上新建一个库
+      2.新建Test文件夹，里面添加几个文件。右击Test文件夹根目录，点击“Git Bash Here”，打开git命令行。
+      3.git init
+      4.git add .
+      5.git commit -m "文件夹里面的文件"
+      6.git remote add origin https://github.com/shench5612390/Test.git（github上的https地址）
+            如果出现fatal: remote origin already exists.
+            就执行命令  vi .git/config  编辑删除【】里面的一行 然后  :wq保存退出
+            再次执行     git remote add origin https://github.com/shench5612390/Test.git
+      7.git push -u origin master
+             如果出现fatal: unable to access 'https://github.com/chengyuanyuan7/shikongxiansheng.git/': Could not resolve host: github.com
+             就执行命令 git remote -v
+	               git remote set-url origin https://github.com/chengyuanyuan7/shikongxiansheng.git
+              再次执行git push -u origin master
+
+    会让输入名称密码，最后查看github有没有上传成功
+
+
+vi & vim 有两种工作模式：
+
+	按下 “ESC” 键，退出编辑模式，切换到命令模式。
+
+		在命令模式下键入"ZZ"或者":wq"保存修改并且退出 vi 。
+
+		如果只想保存文件，则键入":w"，回车后底行会提示写入操作结果，并保持停留在命令模式。
+
+	放弃所有文件修改：
+
+		放弃所有文件修改：按下 "ESC" 键进入命令模式，键入 ":q!" 回车后放弃修改并退出vi。
+
