@@ -91,6 +91,13 @@
       6.git remote add origin https://github.com/shench5612390/Test.git（github上的https地址）
             如果出现fatal: remote origin already exists.
             就执行命令  vi .git/config  编辑删除【】里面的一行 然后  :wq保存退出
+	   （vi & vim 有两种工作模式：
+	              按下 “ESC” 键，退出编辑模式，切换到命令模式。
+	              在命令模式下键入"ZZ"或者":wq"保存修改并且退出 vi 。
+	              如果只想保存文件，则键入":w"，回车后底行会提示写入操作结果，并保持停留在命令模式。
+	       放弃所有文件修改：
+	              放弃所有文件修改：按下 "ESC" 键进入命令模式，键入 ":q!" 回车后放弃修改并退出vi。
+	      ）
             再次执行     git remote add origin https://github.com/shench5612390/Test.git
       7.git push -u origin master
              如果出现fatal: unable to access 'https://github.com/chengyuanyuan7/shikongxiansheng.git/': Could not resolve host: github.com
@@ -101,15 +108,9 @@
     会让输入名称密码，最后查看github有没有上传成功
 
 
-vi & vim 有两种工作模式：
+用git命令行将修改的某个文件提交：
 
-	按下 “ESC” 键，退出编辑模式，切换到命令模式。
-
-		在命令模式下键入"ZZ"或者":wq"保存修改并且退出 vi 。
-
-		如果只想保存文件，则键入":w"，回车后底行会提示写入操作结果，并保持停留在命令模式。
-
-	放弃所有文件修改：
-
-		放弃所有文件修改：按下 "ESC" 键进入命令模式，键入 ":q!" 回车后放弃修改并退出vi。
+	git  add  修改以后的文件名 	
+	git  commit  -m  "添加注释"
+	git push origin master
 
